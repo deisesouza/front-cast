@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Case/Cast - Sistema Bancário</h1>
+  <div class="nav-buttons">
+    <button (click)="showForm('criarConta')">Criar Conta</button>
+    <button (click)="showForm('credito')">Creditar</button>
+    <button (click)="showForm('debito')">Debitar</button>
+    <button (click)="showForm('transferir')">Transferir</button>
+    <button (click)="showForm('extrato')">Extrato</button>
+  </div>
+
+  <div class="content">
+    <app-criar-conta *ngIf="activeForm === 'criarConta'"></app-criar-conta>
+    <app-credito *ngIf="activeForm === 'credito'"></app-credito>
+    <app-debito *ngIf="activeForm === 'debito'"></app-debito>
+    <app-transferir *ngIf="activeForm === 'transferir'"></app-transferir>
+    <app-extrato *ngIf="activeForm === 'extrato'"></app-extrato>
+
+    <div *ngIf="!activeForm" class="welcome-message">
+      <p>Por favor, selecione uma ação no menu acima.</p>
+    </div>
+  </div>
+</div>

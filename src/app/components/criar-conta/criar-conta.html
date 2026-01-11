@@ -1,0 +1,19 @@
+<div class="form-container">
+  <h2>Criar Conta</h2>
+  <form [formGroup]="accountForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="nome">Nome:</label>
+      <input id="nome" type="text" formControlName="nome">
+    </div>
+    <div class="form-group">
+      <label for="senha">Senha:</label>
+      <input id="senha" type="password" formControlName="senha">
+    </div>
+    <div class="form-group">
+      <label for="admin">Admin:</label>
+      <input id="admin" type="checkbox" formControlName="admin">
+    </div>
+    <button type="submit" [disabled]="accountForm.invalid">Criar Conta</button>
+  </form>
+  
+</div>
